@@ -75,9 +75,6 @@ const Header = () => {
                   <span className="header-user-username">@{user?.username}</span>
                   <br />
 
-                  <span className="header-user-email">
-                    <Icon name="email" /> {user?.email}
-                  </span>
                   {user?.googleId && (
                     <span className="header-user-socialid">
                       <Icon name="google" />
@@ -104,10 +101,6 @@ const Header = () => {
             <div className="dropdown-divider"></div>
             <a className="dropdown-item" href="/trash/">
               <Icon name="trashCanOutline" /> {t('Deleted Pages')}
-            </a>
-            <div className="dropdown-divider"></div>
-            <a className="dropdown-item" href="/logout">
-              <Icon name="logout" /> {t('Sign out')}
             </a>
           </div>
         </li>

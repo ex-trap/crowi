@@ -8,6 +8,7 @@ import Bookmark from './bookmark'
 import Comment from './comment'
 import Installer from './installer'
 import Login from './login'
+import LoginWithTraq from './loginWithTraq'
 import Logout from './logout'
 import Me from './me'
 import Notification from './notification'
@@ -28,6 +29,7 @@ export default (crowi: Crowi, app: Express) => ({
   Comment: Comment(crowi),
   Installer: Installer(crowi),
   Login: Login(crowi, app),
+  LoginWithTraq: LoginWithTraq(crowi),
   Logout: Logout(),
   Me: Me(crowi, app),
   Notification: Notification(crowi),

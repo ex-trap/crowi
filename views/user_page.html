@@ -19,7 +19,6 @@
       <h2>{{ pageUser.name }}</h2>
       <ul>
         <li class="user-page-username">{{ Icon("account") }} @{{ pageUser.username }}</li>
-        <li class="user-page-email">{{ Icon("email") }} {{ pageUser.email }}</li>
         {% if pageUser.introduction %}
         <li class="user-page-introduction"><p>{{ pageUser.introduction|nl2br }}</p></li>
         {% endif %}

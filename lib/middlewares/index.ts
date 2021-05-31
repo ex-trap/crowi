@@ -7,6 +7,7 @@ import ApplicationInstalled from './applicationInstalled'
 import ApplicationNotInstalled from './applicationNotInstalled'
 import BasicAuth from './basicAuth'
 import CsrfVerify from './csrfVerify'
+import Disabled from './disabled'
 import EncodeSpace from './encodeSpace'
 import FileAccessRightOrLoginRequired from './fileAccessRightOrLoginRequired'
 import I18next from './i18next'
@@ -22,6 +23,7 @@ export default (crowi: Crowi, app: Express) => ({
   ApplicationNotInstalled: ApplicationNotInstalled(),
   BasicAuth: BasicAuth(crowi, app),
   CsrfVerify: CsrfVerify(crowi),
+  Disabled: Disabled(),
   EncodeSpace: EncodeSpace(),
   FileAccessRightOrLoginRequired: FileAccessRightOrLoginRequired(crowi),
   I18next: I18next(crowi, app),

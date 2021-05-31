@@ -47,6 +47,7 @@ export default (crowi: Crowi, app: Express) => {
     CsrfVerify: csrf,
     ApplicationNotInstalled: applicationNotInstalled,
     ApplicationInstalled: applicationInstalled,
+    Disabled,
   } = middlewares
 
   app.use(routes.Admin)
@@ -56,14 +57,14 @@ export default (crowi: Crowi, app: Express) => {
 
   app.get('/', loginRequired, page.pageListShow)
 
-  app.get('/installer', applicationNotInstalled, installer.index)
-  app.post('/installer/createAdmin', applicationNotInstalled, form.register, csrf, installer.createAdmin)
+  app.get('/installer', Disabled, applicationNotInstalled, installer.index)
+  app.post('/installer/createAdmin', Disabled, applicationNotInstalled, form.register, csrf, installer.createAdmin)
 
-  app.post('/register', form.register, csrf, login.register)
-  app.get('/register', applicationInstalled, login.register)
-  app.get('/google/callback', login.googleCallback)
-  app.get('/github/callback', login.githubCallback)
-  app.get('/logout', logout.logout)
+  app.post('/register', Disabled, form.register, csrf, login.register)
+  app.get('/register', Disabled, applicationInstalled, login.register)
+  app.get('/google/callback', Disabled, login.googleCallback)
+  app.get('/github/callback', Disabled, login.githubCallback)
+  app.get('/logout', Disabled, logout.logout)
 
   app.get('/:id([0-9a-z]{24})', loginRequired, page.api.redirector)
   app.get('/_r/:id([0-9a-z]{24})', loginRequired, page.api.redirector) // alias
